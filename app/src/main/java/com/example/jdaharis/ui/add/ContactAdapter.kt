@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.jdaharis.R
 
+
 class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     private val mData = ArrayList<ContactEntity>()
 
@@ -36,9 +37,9 @@ class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bind(contact : ContactEntity){
                 with(itemView){
-//                    Glide.with(itemView.context)
-//                        .load(contact.picture.thumbnail)
-//                        .into(iv_thumbnail)
+                    Glide.with(itemView.context)
+                        .load(contact.picture.thumbnail)
+                        //.into(iv_thumbnail)
                 }
         }
     }
