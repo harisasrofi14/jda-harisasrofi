@@ -21,10 +21,10 @@ class ContactRepository private constructor(private val remoteDataSource: Remote
     override fun getAllContact(): LiveData<List<ContactEntity>> {
             val contactResults = MutableLiveData<List<ContactEntity>>()
         remoteDataSource.getAllContact(object : RemoteDataSource.LoadContactCallback{
-            override fun onAllContactReceived(movieResponse: List<Results>) {
+            override fun onAllContactReceived(contactResponse: List<Results>) {
                 val contactList = ArrayList<ContactEntity>()
 
-                for (data in movieResponse) {
+                for (data in contactResponse) {
                     val contact = ContactEntity(
                         data.gender,
                         data.name,
