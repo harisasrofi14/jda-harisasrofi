@@ -1,7 +1,8 @@
-package com.example.jdaharis
+package com.example.jdaharis.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.jdaharis.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
