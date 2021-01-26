@@ -22,7 +22,7 @@ class ContactRepository private constructor(private val remoteDataSource: Remote
             val contactResults = MutableLiveData<List<ContactEntity>>()
         remoteDataSource.getAllContact(object : RemoteDataSource.LoadContactCallback{
             override fun onAllContactReceived(movieResponse: List<Results>) {
-                val movieList = ArrayList<ContactEntity>()
+                val contactList = ArrayList<ContactEntity>()
 
                 for (data in movieResponse) {
                     val contact = ContactEntity(
@@ -37,9 +37,9 @@ class ContactRepository private constructor(private val remoteDataSource: Remote
                         data.picture,
                         data.nat,
                     )
-                    movieList.add(contact)
+                    contactList.add(contact)
                 }
-                contactResults.postValue(movieList)
+                contactResults.postValue(contactList)
             }
 
         })
