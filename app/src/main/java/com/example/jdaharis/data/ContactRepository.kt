@@ -25,7 +25,7 @@ class ContactRepository private constructor(private val remoteDataSource: Remote
                 val movieList = ArrayList<ContactEntity>()
 
                 for (data in movieResponse) {
-                    val movie = ContactEntity(
+                    val contact = ContactEntity(
                         data.gender,
                         data.name,
                         data.location,
@@ -37,7 +37,7 @@ class ContactRepository private constructor(private val remoteDataSource: Remote
                         data.picture,
                         data.nat,
                     )
-                    movieList.add(movie)
+                    movieList.add(contact)
                 }
                 contactResults.postValue(movieList)
             }
