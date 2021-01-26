@@ -1,12 +1,14 @@
 package com.example.jdaharis.ui.home
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 
 import android.view.MenuItem
 import com.example.jdaharis.R
+import com.example.jdaharis.ui.add.AddContactActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         return  true
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when(item.itemId) {
-//                add
-//            else ->
-//        }
- //   }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menu_add ->   startActivity(Intent(this, AddContactActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
